@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="alogin.css">
+</head>
+
+<body>
+    <div class="head-back">
+        <marquee behavior="Alternate">
+            <h1>Leave Management System &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leave Management
+                System&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leave Management System</h1>
+            <br>
+        </marquee>
+    </div>
+    <div class="imgcontainer">
+        <img src="avatar.jpg" alt="Avatar" class="avatar">
+    </div>
+    <div class="login">
+        <form id="login" onsubmit="auth()">
+            <a href="login.html" class="user-heading">User Login</a>
+            <a href="alogin.html" class="admin-heading">Admin Login</a>
+            <a href="login.html" class="user-heading">User Login</a>
+            <br>
+            <br>
+            <label><b>Admin name</b>
+            </label>
+            <input type="text" name="Admin" id="Admin" required placeholder="User">
+            <br><br>
+            <label><b>Password
+                </b>
+            </label>
+            <input type="Password" name="password" id="Password" required placeholder="Password">
+            <br><br>
+            <a onclick="auth()" class="submit-btn" name="log" id="log" value="Log In">Log In</a>
+            <br><br>
+            <br><br>
+            <input type="checkbox" id="check">
+            <span>Remember me</span>
+            <br><br>
+            <div class="rshift"><a href="forgot.html">Forgot Password</a></div>
+        </form>
+    </div>
+    <script>
+        function auth() {
+
+            var Username = document.getElementById("Admin").value;
+            var Password = document.getElementById("Password").value;
+
+            if (Username === "admin" && Password === "password") {
+                location.assign(`admin.html`)
+                alert("Login successful")
+            }
+            else {
+                alert("Invalid. Please try again.");
+            }
+        }
+    </script>
+</body>
+
+</html>

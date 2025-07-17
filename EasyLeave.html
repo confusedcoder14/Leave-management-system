@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Management System Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="EasyLeave.css">
+
+</head>
+
+<body>
+  <div class="navbar">
+
+    <a class="active" href="EasyLeave.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a id="openBtn" class="button"  ><i class="fa fa-fw fa-user"></i>
+      Profile
+    </a>
+    <a href="#section11"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Logout</a>
+  </div>
+
+
+
+  <div class="dashboard">
+    <h1>Welcome to the Leave Management System</h1>
+    <div class="leave-balance">
+      <h2>Leave Balance</h2>
+      <table id="leaveTable">
+        <tr>
+          <th>Casual Leave:</th>
+          <th>10</th>
+        </tr>
+        <tr>
+          <th>Medical Leave:</th>
+          <th>9</th>
+        </tr>
+        <tr>
+          <th>Comp Off:</th>
+          <th>10</th>
+        </tr>
+
+      </table>
+    </div>
+    <div class="leave-eligibility">
+      <h2>Leave Eligibility</h2>
+      <p>You are eligible for <span id="eligibility"></span> days of leave per year.</p>
+    </div>
+    <button class="leave-application-button colorf" onclick="window.location.href='./application.html'" >Apply for
+      leave</button>
+
+  </div>
+  <div class="leave-history">
+    <h2>Previous Leave History</h2>
+    <div class="table-container">
+      <table id="leaveTable">
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Anmol kumak gupta</td>
+          <td>Medical</td>
+          <td>2023-06-10</td>
+          <td>2023-06-15</td>
+          <td>Pending</td>
+        </tr>
+
+      </table>
+    </div>
+
+  </div>
+
+  <div id="section11" class="container">
+    <h2>Contact Us</h2>
+    <form action="submit.php" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+  <div id="popupContainer" class="popup">
+    <div class="popup-content">
+      <header>
+      <button id="closeBtn" class="btn"><i class="fa fa-close"></i></button>
+    </header>
+      <img src="Pic_1608821373952_compress54.jpg" alt="Bart Veneman" width="124" height="124" class="profile__image" />
+      <h2>Anmol kumar gupta</h2>
+      <ul class="social">
+        <li><a href="#"><i class="fa fa-github"></i></a></li><!--
+        --><li><a href="#"><i class="fa fa-instagram"></i></a></li><!--
+        --><li><a href="#"><i class="fa fa-twitter"></i></a></li><!--
+        --><li><a href="#"><i class="fa fa-bitbucket"></i></a></li><!--
+        --><li class="location"><i class="fa fa-map-marker "> </i><span>Raipur, Chhattisgarh</span></li>
+      </ul>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2023 My Homepage. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

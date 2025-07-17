@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <title>Leave Management Admin Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-image: url(http://admin.hnsbroadband.com/img/page%20background.jpg);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ba2020;
+      background-color: #ddd;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .add-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      float: right;
+      font-size: 17px;
+    }
+
+    .add-button:hover {
+      background-color: #000000;
+    }
+
+    .navbar a {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      background-color: #45a049;
+      margin-bottom: 20px;
+      float: left;
+    }
+
+    .navbar a:hover {
+      background-color: #000;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #e60808;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Leave Management Admin Page</h1>
+  <div class="navbar">\
+    <a href="alogin.html"><i class="fa fa-fw fa-user"></i> Logout</a>
+  </div>
+  <button class="add-button" onclick="openAddModal()">Add Leave</button>
+
+  <table id="leaveTable">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td>Anmol kumak gupta</td>
+      <td>Medical</td>
+      <td>2023-06-10</td>
+      <td>2023-06-15</td>
+      <td>Pending</td>
+      <td>
+
+        <button class="button" onclick="editLeave()">Edit</button>
+        <button class="button" onclick="deleteLeave()">Delete</button>
+        <button class="button" onclick="ApprovedLeave()">Approved</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Sahil Kurrye</td>
+      <td>Medical</td>
+      <td>2023-06-10</td>
+      <td>2023-06-15</td>
+      <td>Pending</td>
+      <td>
+
+        <button class="button" onclick="editLeave()">Edit</button>
+        <button class="button" onclick="deleteLeave()">Delete</button>
+        <button class="button" onclick="ApprovedLeave()">Approved</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Kunal Mishra</td>
+      <td>Casual</td>
+      <td>2023-06-10</td>
+      <td>2023-06-15</td>
+      <td>Pending</td>
+      <td>
+
+        <button class="button" onclick="editLeave()">Edit</button>
+        <button class="button" onclick="deleteLeave()">Delete</button>
+        <button class="button" onclick="ApprovedLeave()">Approved</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Ritesh pandey</td>
+      <td>Medical</td>
+      <td>2023-06-10</td>
+      <td>2023-06-15</td>
+      <td>Pending</td>
+      <td>
+
+        <button class="button" onclick="editLeave()">Edit</button>
+        <button class="button" onclick="deleteLeave()">Delete</button>
+        <button class="button" onclick="ApprovedLeave()">Approved</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Anmol kumak gupta</td>
+      <td>Casual</td>
+      <td>2023-06-10</td>
+      <td>2023-06-15</td>
+      <td>Pending</td>
+      <td>
+
+        <button class="button" onclick="editLeave()">Edit</button>
+        <button class="button" onclick="deleteLeave()">Delete</button>
+        <button class="button" onclick="ApprovedLeave()">Approved</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Sumit kumar</td>
+      <td>Casual</td>
+      <td>2023-06-10</td>
+      <td>2023-06-15</td>
+      <td>Pending</td>
+      <td>
+
+        <button class="button" onclick="editLeave()">Edit</button>
+        <button class="button" onclick="deleteLeave()">Delete</button>
+        <button class="button" onclick="ApprovedLeave()">Approved</button>
+      </td>
+    </tr>
+    <!-- More rows can be added dynamically using JavaScript -->
+  </table>
+
+  <!-- Add Leave Modal -->
+  <div id="addModal" style="display: none;">
+    <h2>Add Leave</h2>
+    <input type="text" placeholder="Name" id="nameInput"><br>
+    <input type="text" placeholder="Type" id="typeInput"><br>
+    <input type="date" id="startDateInput"><br>
+    <input type="date" id="endDateInput"><br>
+    <button onclick="saveLeave()">Save</button>
+    <button onclick="closeAddModal()">Cancel</button>
+  </div>
+
+  <!-- Edit Leave Modal -->
+  <div id="editModal" style="display: none;">
+    <h2>Edit Leave</h2>
+    <input type="text" placeholder="Name" id="editNameInput"><br>
+    <input type="text" placeholder="Type" id="editTypeInput"><br>
+    <input type="date" id="editStartDateInput"><br>
+    <input type="date" id="editEndDateInput"><br>
+    <button onclick="updateLeave()">Update</button>
+    <button onclick="closeEditModal()">Cancel</button>
+  </div>
+
+  <script>
+    // Functions for modal functionality
+    function openAddModal() {
+      document.getElementById("addModal").style.display = "block";
+    }
+
+    function closeAddModal() {
+      document.getElementById("addModal").style.display = "none";
+      clearAddModalInputs();
+    }
+
+    function openEditModal() {
+      document.getElementById("editModal").style.display = "block";
+    }
+
+    function closeEditModal() {
+      document.getElementById("editModal").style.display = "none";
+      clearEditModalInputs();
+    }
+
+    // Functions for leave management
+    function saveLeave() {
+      // Get input values
+      var name = document.getElementById("nameInput").value;
+      var type = document.getElementById("typeInput").value;
+      var startDate = document.getElementById("startDateInput").value;
+      var endDate = document.getElementById("endDateInput").value;
+
+      // Create a new row with the leave details
+      var table = document.getElementById("leaveTable");
+      var row = table.insertRow(table.rows.length);
+      var nameCell = row.insertCell(0);
+      var typeCell = row.insertCell(1);
+      var startDateCell = row.insertCell(2);
+      var endDateCell = row.insertCell(3);
+      var statusCell = row.insertCell(4);
+      var actionsCell = row.insertCell(5);
+
+      // Set the cell values
+      nameCell.innerHTML = name;
+      typeCell.innerHTML = type;
+      startDateCell.innerHTML = startDate;
+      endDateCell.innerHTML = endDate;
+      statusCell.innerHTML = "Pending";
+      actionsCell.innerHTML = '<button onclick="editLeave()">Edit</button><button onclick="deleteLeave()">Delete</button>    <button onclick="ApprovedLeave()">Approved</button>';
+
+      // Close the add modal and clear inputs
+      closeAddModal();
+    }
+
+    function editLeave() {
+      // Get the selected row data
+      var selectedRow = event.target.parentNode.parentNode;
+      var name = selectedRow.cells[0].innerHTML;
+      var type = selectedRow.cells[1].innerHTML;
+      var startDate = selectedRow.cells[2].innerHTML;
+      var endDate = selectedRow.cells[3].innerHTML;
+
+      // Set the data in the edit modal inputs
+      document.getElementById("editNameInput").value = name;
+      document.getElementById("editTypeInput").value = type;
+      document.getElementById("editStartDateInput").value = startDate;
+      document.getElementById("editEndDateInput").value = endDate;
+
+      // Open the edit modal
+      openEditModal();
+    } 6
+
+    function updateLeave() {
+      // Get the edited values
+      var newName = document.getElementById("editNameInput").value;
+      var newType = document.getElementById("editTypeInput").value;
+      var newStartDate = document.getElementById("editStartDateInput").value;
+      var newEndDate = document.getElementById("editEndDateInput").value;
+
+      // Update the row data
+      var selectedRow = event.target.parentNode.parentNode;
+      selectedRow.cells[0].innerHTML = newName;
+      selectedRow.cells[1].innerHTML = newType;
+      selectedRow.cells[2].innerHTML = newStartDate;
+      selectedRow.cells[3].innerHTML = newEndDate;
+
+      // Close the edit modal
+      closeEditModal();
+    }
+
+    function deleteLeave() {
+      var confirmation = confirm("Are you sure you want to delete this leave?");
+      if (confirmation) {
+        var selectedRow = event.target.parentNode.parentNode;
+        selectedRow.parentNode.removeChild(selectedRow);
+      }
+    }
+
+    // Functions to clear modal inputs
+    function clearAddModalInputs() {
+      document.getElementById("nameInput").value = "";
+      document.getElementById("typeInput").value = "";
+      document.getElementById("startDateInput").value = "";
+      document.getElementById("endDateInput").value = "";
+    }
+
+    function clearEditModalInputs() {
+      document.getElementById("editNameInput").value = "";
+      document.getElementById("editTypeInput").value = "";
+      document.getElementById("editStartDateInput").value = "";
+      document.getElementById("editEndDateInput").value = "";
+    }
+  </script>
+</body>
+
+</html>
