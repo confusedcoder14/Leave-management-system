@@ -1,59 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Apply Leave Application </title>
-<link rel="stylesheet" href="application.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply for Leave</title>
+  <link rel="stylesheet" href="application.css">
 </head>
 <body>
+  <div class="container">
+    <a href="EasyLeave.html" class="back-link">← Back to Home</a>
 
-<div   id="center">
- 
+    <div class="form-box">
+      <h2>Apply for Leave</h2>
+      <p class="subtitle">Submit a new leave request for approval</p>
 
-    <form>
-     <table id="form-container">
-       <h2 class="heading-inner">Apply Leave Application </h2>
-  <tr>
-    <td id="label">Employee Code </td><td><input  type="text"  class="inputBox"  placeholder="99999" maxlength="5" pattern="^[1-9][0-9]*$" min="10000" minlength="5" required/></td>
-    <td id="label">Employee Name </td><td><input  type="text"  class="inputBox"  maxlength="50"  minlength="2"  placeholder="Enter full name" required/></td>
-  </tr>
-  <tr>
-    <td id="label" for="drpleavetype">Applying For </td><td><select  name="drpleavetype" class="selectBox">
-  <option selected>Select an option</option>
-  <option value="CasualLeave"> Casual Leave</option>
-    <option value="SickLeave"> Medical Leave</option>
-    <option value="CompOff"> Comp Off</option>
-</select></td>
-    <td id="label" for="drpapplyingtyp">Applying Type </td><td><select  name="drpapplyingtyp" class="selectBox">
-  <option selected>Select an option</option>
-  <option value="Forenoon">Forenoon</option>
-    <option value="Afternoon">Afternoon</option>
-    <option value="FullDay">Full Day</option>
-</select></td>
-  </tr>
-   <tr>
-    <td id="label">No of Days </td><td><input  type="number"  class="inputBox" min="1" minlength="1" maxlength="2" placeholder="Enter whole number" required/></td>
-    <td id="label">From Date </td><td><input type="date" value="2020-05-06" class="inputBox" required/></td>
-  </tr>
-  <tr>
-    <td id="label">To Date </td><td><input type="date" value="2020-05-06" class="inputBox" required/></td>
-    <td id="label">Contact No </td><td><input  type="mobile" maxlenth="10" minlength="7" pattern="^[789]\d{9}$" class="inputBox"  placeholder="9999999999" required/></td>
-  </tr>
-        <tr>
-    <td id="label">Reason</td><td><input  type="text"  class="inputBox"  maxlenth="100" minlength="5"  placeholder="Enter leave reason" required/></td>
-    <td><input type="submit" id="btnSubmit" value="Submit"/></td>
-  </tr>
-  
-       
-  
-  
- 
-  </tr>
-  
-</table>
-</form>
- 
-  
+      <form action="nextpage.html" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Leave Type</label>
+            <select>
+              <option>Select leave type</option>
+              <option>Casual Leace</option>
+              <option>Sick Leave</option>
+              <option>Personal Leave</option>
+              <option>Maternity Leave</option>
+              <option>Paternity Leave</option>
+              <option>Emergency Leave</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Emergency Contact</label>
+            <input type="text" placeholder="Phone number">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Start Date</label>
+            <input type="date">
+          </div>
+
+          <div class="form-group">
+            <label>End Date</label>
+            <input type="date">
+          </div>
+        </div>
+
+        <div class="form-group full">
+          <label>Reason for Leave</label>
+          <textarea placeholder="Please provide details about your leave request..."></textarea>
+        </div>
+
+        <div class="leave-summary">
+          <p><strong>Leave Balance Summary</strong></p>
+          <p>Total Days: <span class="blue">25</span> &nbsp; | &nbsp; Used Days: <span class="blue">12</span> &nbsp; | &nbsp; Remaining: <span class="blue">13</span></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Submit Application</button>
+          <button type="button" class="draft-btn">Save as Draft</button>
+        </div>
+      </form>
+    </div>
   </div>
-
 </body>
 </html>

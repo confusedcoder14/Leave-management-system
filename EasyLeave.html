@@ -12,68 +12,84 @@
 
 <body>
   <div class="navbar">
-
     <a class="active" href="EasyLeave.html"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a id="openBtn" class="button"  ><i class="fa fa-fw fa-user"></i>
-      Profile
-    </a>
+    <a id="openBtn" class="button"  ><i class="fa fa-fw fa-user"></i>Profile</a>
     <a href="#section11"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a href="login.html"><i class="fa fa-fw fa-user"></i> Logout</a>
   </div>
 
-
-
-  <div class="dashboard">
+  <br class="dashboard">
     <h1>Welcome to the Leave Management System</h1>
-    <div class="leave-balance">
-      <h2>Leave Balance</h2>
-      <table id="leaveTable">
-        <tr>
-          <th>Casual Leave:</th>
-          <th>10</th>
-        </tr>
-        <tr>
-          <th>Medical Leave:</th>
-          <th>9</th>
-        </tr>
-        <tr>
-          <th>Comp Off:</th>
-          <th>10</th>
-        </tr>
-
-      </table>
+    <br></br>
+    <div class="dashboard-container">
+    <!-- Top Stat Cards -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <h3>Total Leave Days</h3>
+        <p class="number">25</p>
+        <span>Annual allocation</span>
+      </div>
+      <div class="stat-card">
+        <h3>Used Days</h3>
+        <p class="number">12</p>
+        <span>48% of total</span>
+      </div>
+      <div class="stat-card">
+        <h3>Remaining Days</h3>
+        <p class="number">13</p>
+        <span>Available to use</span>
+      </div>
+      <div class="stat-card">
+        <h3>Pending Requests</h3>
+        <p class="number">2</p>
+        <span>Awaiting approval</span>
+      </div>
     </div>
-    <div class="leave-eligibility">
-      <h2>Leave Eligibility</h2>
-      <p>You are eligible for <span id="eligibility"></span> days of leave per year.</p>
-    </div>
-    <button class="leave-application-button colorf" onclick="window.location.href='./application.html'" >Apply for
-      leave</button>
 
+    <!-- Bottom Panels -->
+    <div class="bottom-panels">
+      <!-- Recent Leave Requests -->
+      <div class="panel recent-leaves">
+        <h2>Recent Leave Requests</h2>
+        <p class="subtitle">Your latest leave applications</p>
+
+        <div class="leave-item">
+          <div>
+            <strong>Annual Leave</strong>
+            <p>Dec 20–24, 2024 (5 days)</p>
+          </div>
+          <span class="badge pending">Pending</span>
+        </div>
+
+        <div class="leave-item">
+          <div>
+            <strong>Sick Leave</strong>
+            <p>Nov 15, 2024 (1 day)</p>
+          </div>
+          <span class="badge approved">Approved</span>
+        </div>
+
+        <div class="leave-item">
+          <div>
+            <strong>Personal Leave</strong>
+            <p>Oct 28, 2024 (1 day)</p>
+          </div>
+          <span class="badge approved">Approved</span>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="panel quick-actions">
+        <h2>Quick Actions</h2>
+        <p class="subtitle">Common tasks and shortcuts</p>
+        <button onclick="window.location.href='application.html'" class="action-btn">📅 Apply for Leave</button>
+        <button onclick="window.location.href='history.html'" class="action-btn">📄 View Leave History</button>
+        <button onclick="window.location.href='application.html'" class="action-btn">🗓️ Team Calendar</button>
+      </div>
+    </div>
   </div>
-  <div class="leave-history">
-    <h2>Previous Leave History</h2>
-    <div class="table-container">
-      <table id="leaveTable">
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td>Anmol kumak gupta</td>
-          <td>Medical</td>
-          <td>2023-06-10</td>
-          <td>2023-06-15</td>
-          <td>Pending</td>
-        </tr>
-
-      </table>
-    </div>
-
-  </div>
+<br></br>
+<br></br>
 
   <div id="section11" class="container">
     <h2>Contact Us</h2>

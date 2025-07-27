@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9fafb;
+    }
+    header {
+      background-color: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #6b7280;
+    }
+    .nav-links a.active {
+      color: #2563eb;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 1024px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 2rem;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .card-description {
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+    .badge.approved { background-color: #d1fae5; color: #065f46; }
+    .badge.pending { background-color: #fef3c7; color: #92400e; }
+    .badge.rejected { background-color: #fee2e2; color: #991b1b; }
+    .leave-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      background: #fff;
+      margin-bottom: 1rem;
+    }
+    .leave-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .leave-reason, .leave-footer {
+      font-size: 0.875rem;
+      color: #4b5563;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      margin-left: 0.5rem;
+    }
+    .btn.cancel {
+      color: #dc2626;
+    }
+    .search-filter {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .search-input {
+      padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #2563eb;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a href="EasyLeave.html" class="back-link"><i data-feather="arrow-left" style="margin-right:0.25rem"></i>← Back to Home</a>
+
+    <div class="card">
+      <div class="card-title">Leave History</div>
+      <div class="card-description">View all your leave applications and their status</div>
+
+      <div class="search-filter">
+        <input class="search-input" type="text" placeholder="Search leave requests...">
+        <button class="btn"><i data-feather="filter" style="margin-right:0.25rem"></i> Filter</button>
+      </div>
+
+      <!-- Repeat this block for each leave entry -->
+      <div class="leave-item">
+        <div class="leave-header">
+          <div>
+            <div style="font-weight:600">Annual Leave</div>
+            <div class="leave-reason">20/12/2024 - 24/12/2024</div>
+          </div>
+          <div style="text-align:right">
+            <span class="badge pending">Pending</span>
+            <div class="leave-reason">5 days</div>
+          </div>
+        </div>
+        <div class="leave-reason"><strong>Reason:</strong> Christmas vacation with family</div>
+        <div class="leave-footer" style="margin-top:1rem;display:flex;justify-content:space-between">
+          <span>Applied on: 15/11/2024</span>
+          <div>
+            <button class="btn">View Details</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="leave-item">
+        <div class="leave-header">
+          <div>
+            <div style="font-weight:600">Sick Leave</div>
+            <div class="leave-reason">15/11/2024 - 15/11/2024</div>
+          </div>
+          <div style="text-align:right">
+            <span class="badge approved">Approved</span>
+            <div class="leave-reason">1 days</div>
+          </div>
+        </div>
+        <div class="leave-reason"><strong>Reason:</strong> Flu symptoms</div>
+        <div class="leave-footer" style="margin-top:1rem;display:flex;justify-content:space-between">
+          <span>Applied on: 14/11/2024</span>
+          <div>
+            <button class="btn">View Details</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="leave-item">
+        <div class="leave-header">
+          <div>
+            <div style="font-weight:600">Personal Leave</div>
+            <div class="leave-reason">28/10/2024 - 28/10/2024</div>
+          </div>
+          <div style="text-align:right">
+            <span class="badge approved">Approved</span>
+            <div class="leave-reason">1 days</div>
+          </div>
+        </div>
+        <div class="leave-reason"><strong>Reason:</strong> Personal appointment</div>
+        <div class="leave-footer" style="margin-top:1rem;display:flex;justify-content:space-between">
+          <span>Applied on: 25/10/2024</span>
+          <div>
+            <button class="btn">View Details</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="leave-item">
+        <div class="leave-header">
+          <div>
+            <div style="font-weight:600">Annual Leave</div>
+            <div class="leave-reason">10/09/2024 - 12/09/2024</div>
+          </div>
+          <div style="text-align:right">
+            <span class="badge approved">Approved</span>
+            <div class="leave-reason">3 days</div>
+          </div>
+        </div>
+        <div class="leave-reason"><strong>Reason:</strong> Weekend getaway</div>
+        <div class="leave-footer" style="margin-top:1rem;display:flex;justify-content:space-between">
+          <span>Applied on: 20/08/2024</span>
+          <div>
+            <button class="btn">View Details</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="leave-item">
+        <div class="leave-header">
+          <div>
+            <div style="font-weight:600">Sick Leave</div>
+            <div class="leave-reason">05/08/2024 - 06/08/2024</div>
+          </div>
+          <div style="text-align:right">
+            <span class="badge approved">Approved</span>
+            <div class="leave-reason">2 days</div>
+          </div>
+        </div>
+        <div class="leave-reason"><strong>Reason:</strong> Medical appointment and recovery</div>
+        <div class="leave-footer" style="margin-top:1rem;display:flex;justify-content:space-between">
+          <span>Applied on: 04/08/2024</span>
+          <div>
+            <button class="btn">View Details</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="leave-item">
+        <div class="leave-header">
+          <div>
+            <div style="font-weight:600">Sick Leave</div>
+            <div class="leave-reason">01/07/2024 - 05/07/2024</div>
+          </div>
+          <div style="text-align:right">
+            <span class="badge rejected">Rejected</span>
+            <div class="leave-reason">5 days</div>
+          </div>
+        </div>
+        <div class="leave-reason"><strong>Reason:</strong> Summer vacation - conflicted with project deadline</div>
+        <div class="leave-footer" style="margin-top:1rem;display:flex;justify-content:space-between">
+          <span>Applied on: 15/06/2024</span>
+          <div>
+            <button class="btn">View Details</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <!-- End leave block -->
+
+      <div style="text-align:center;margin-top:2rem">
+        <button class="btn">Load More</button>
+      </div>
+    </div>
+  </main>
+  <script>feather.replace()</script>
+</body>
+</html>
